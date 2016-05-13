@@ -1,4 +1,4 @@
-# rails_final_project
+*Final project for mpcs web development, Spring 2016*
 
 # Bulletin: A calendar of community events
 
