@@ -1,0 +1,27 @@
+User
+  username: text
+  email: text
+  password: text
+
+Community
+  creator_id: integer
+  comm_category: text
+  location: text
+
+Event
+  title: text
+  location: text
+  image_url: text
+  date_start: date
+  date_end: date
+  time_start: time
+  time_end: time
+  description: text
+  creator_id: integer
+  community_id: integer
+  event_category: text
+
+Calendar
+  date: date
+  event_id: integer
+  community_id: integer
