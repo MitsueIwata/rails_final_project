@@ -2,38 +2,12 @@
 
 # Bulletin: A calendar of community events
 
-The site will allow people to create communities and to post events to a community calendar to share with the general public.
+The site will allow people to create communities and to post events to a community calendar to share with the general public. The idea is similar to meetup.com, but focuses around a calendar of events.
 
-Users can post events, such as guest speakers, volunteering opportunities, food drives, etc., on calendars. Anyone can view the calendars, but only people in the community can post to the calendar and comment on the event. 
+Once users create an account, they can create and post events, such as guest speakers, volunteering opportunities, food drives, etc., on calendars. Create or join a community, or comment on other community member's events.
 
-Users can:
-- create an account
-- create an event
-- create a community
-- join a community
-- post an event to a community bulletin
-- comment on an event in their communitiy 
+Events will be created by users and posted to calendars. Anyone can view the calendars, but only people in the community can post to the calendar and comment on the event. Events also have categories, such as workshop, mentoring, entrepreneurship, etc.
 
-Events have:
-- title
-- location
-- image
-- date start
-- date end
-- time start 
-- time end
-- description 
-- creator_id
-- community_id
-- category
+Communities can be defined geographically, or by interest, or both. For example, Woodlawn Youth, or DIY.
 
-Communities have:
-- creator_id
-- members
-- category
-- location (optional)
-
-Calendars have:
-- date
-- events
-- community
+Calendars will be populated with events for each community.
