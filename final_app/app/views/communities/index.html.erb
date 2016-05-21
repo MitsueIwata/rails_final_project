@@ -12,9 +12,11 @@
   </thead>
   <tbody>
     <% @community.each do |comm| %>
+
+    <% user = User.find_by(id: comm.organizer) %>
       <tr>
         <td><%= comm.comm_name %></td>
-        <td><%= comm.organizer %></td>
+        <td><%= user.username %></td>
         <td><%= comm.comm_category %></td>
         <td><%= comm.location %></td>
       </tr>
