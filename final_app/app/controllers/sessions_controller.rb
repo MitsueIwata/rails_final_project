@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user
       if user.authenticate(params[:password])
         session["user_id"] = user.id
-        flash["notice"] = "Welcome back, #{user.name}"
+        flash["notice"] = "Welcome back, #{user.username}"
         redirect_to root_url
         return
       else
