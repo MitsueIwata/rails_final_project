@@ -11,3 +11,5 @@ Events will be created by users and posted to calendars. Anyone can view the cal
 Communities can be defined geographically, or by interest, or both. For example, Woodlawn Youth, or DIY.
 
 Calendars will be populated with events for each community.
+
+Comments will keep track of user comments.

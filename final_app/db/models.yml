@@ -25,3 +25,9 @@ Calendar
   date: date
   event_id: integer
   community_id: integer
+
+Comment
+  date: date
+  user_id: integer
+  event_id: integer
+  community_id: integer

@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "calendars", ["community_id"], name: "index_calendars_on_community_id"
   add_index "calendars", ["event_id"], name: "index_calendars_on_event_id"
 
+  create_table "comments", force: :cascade do |t|
+    t.date    "date"
+    t.integer "user_id"
+    t.integer "event_id"
+    t.integer "community_id"
+  end
+
+  add_index "comments", ["community_id"], name: "index_comments_on_community_id"
+  add_index "comments", ["event_id"], name: "index_comments_on_event_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
   create_table "communities", force: :cascade do |t|
     t.integer "creator_id"
     t.text    "comm_category"
