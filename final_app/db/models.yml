@@ -1,7 +1,9 @@
 User
   username: text
   email: text
+  image_url: text
   password: text
+  password_digest: text
 
 Community
   comm_name: text

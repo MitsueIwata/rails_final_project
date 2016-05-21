@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.text "username"
     t.text "email"
     t.text "password"
+    t.text "image_url"
+    t.text "password_digest"
   end
 
 end
