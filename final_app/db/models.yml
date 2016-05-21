@@ -4,7 +4,8 @@ User
   password: text
 
 Community
-  creator_id: integer
+  comm_name: text
+  organizer: integer
   comm_category: text
   location: text
 

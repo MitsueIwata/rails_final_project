@@ -34,12 +34,11 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "communities", force: :cascade do |t|
-    t.integer "creator_id"
     t.text    "comm_category"
     t.text    "location"
+    t.text    "comm_name"
+    t.integer "organizer"
   end
-
-  add_index "communities", ["creator_id"], name: "index_communities_on_creator_id"
 
   create_table "events", force: :cascade do |t|
     t.text    "title"

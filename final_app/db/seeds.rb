@@ -17,10 +17,10 @@ bart = User.create( :username => 'Bart Simpson', :email => 'bart@example.org', :
 lisa = User.create( :username => 'Lisa Simpson', :email => 'lisa@example.org', :password => 'stacy' )
 monty = User.create( :username => 'Monty Burns', :email => 'monty@example.org', :password => 'excellent' )
 
-moes = Community.create(:creator_id => homer.id, :comm_category=> 'beer', :location =>'moes tavern')
-quikEMart = Community.create(:creator_id => bart.id, :comm_category => 'slushies', :location => 'Springfield')
-school = Community.create(:creator_id => lisa.id, :comm_category => 'study group', :location => 'classroom')
-nuclearPlant = Community.create(:creator_id => monty.id, :comm_category => 'work', :location => 'Power Plant')
+moes = Community.create(:comm_name => "Happy Hour", :organizer => homer.id, :comm_category=> 'beer', :location =>'moes tavern')
+quikEMart = Community.create(:comm_name => "Free Slushie Tuesday", :organizer => bart.id, :comm_category => 'slushies', :location => 'Springfield')
+school = Community.create(:comm_name => "Model UN", :organizer => lisa.id, :comm_category => 'study group', :location => 'classroom')
+nuclearPlant = Community.create(:comm_name => "Hail to the Thief", :organizer => monty.id, :comm_category => 'work', :location => 'Power Plant')
 
 print "There are now #{User.count} users in the database.\n"
 print "There are now #{Community.count} communitites in the database.\n"

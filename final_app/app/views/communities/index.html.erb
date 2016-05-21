@@ -1,0 +1,24 @@
+<h1>Communities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Organizer</th>
+      <th>Category</th>
+      <th>Location</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @community.each do |comm| %>
+      <tr>
+        <td><%= comm.comm_name %></td>
+        <td><%= comm.organizer %></td>
+        <td><%= comm.comm_category %></td>
+        <td><%= comm.location %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
