@@ -18,7 +18,7 @@ lisa = User.create( :username => 'Lisa Simpson', :email => 'lisa@example.org', :
 monty = User.create( :username => 'Monty Burns', :email => 'monty@example.org', :password => 'excellent' )
 
 moes = Community.create(:comm_name => "Happy Hour", :organizer => homer.id, :comm_category=> 'beer', :location =>'moes tavern')
-quikEMart = Community.create(:comm_name => "Free Slushie Tuesday", :organizer => bart.id, :comm_category => 'slushies', :location => 'Springfield')
+quikEMart = Community.create(:comm_name => "Free Slushies", :organizer => bart.id, :comm_category => 'slushies', :location => 'Springfield')
 school = Community.create(:comm_name => "Model UN", :organizer => lisa.id, :comm_category => 'study group', :location => 'classroom')
 nuclearPlant = Community.create(:comm_name => "Hail to the Thief", :organizer => monty.id, :comm_category => 'work', :location => 'Power Plant')
 
