@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.text    "location"
     t.text    "comm_name"
     t.integer "organizer"
+    t.text    "description"
   end
 
   create_table "events", force: :cascade do |t|

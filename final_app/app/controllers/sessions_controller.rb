@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       if user.authenticate(params[:password])
         session["user_id"] = user.id
         flash["notice"] = "Welcome back, #{user.username}"
-        redirect_to root_url
+        redirect_to :controller => 'users', :action => 'show', :id => user.id
         return
       else
         # Email is ok, but password was wrong

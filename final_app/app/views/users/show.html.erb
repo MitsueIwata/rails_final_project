@@ -3,3 +3,20 @@
 <p>Name: <%= @user.username %></p>
 <p>Email: <%= @user.email %></p>
 <p>Password: <%= @user.password %></p>
+
+<h1>My Calendar</h1>
+
+
+<h1>My Communities</h1>
+  <ul>
+    <% comms = Community.where(organizer: @user.id) %>
+    <% comms.each do |comm| %>
+      <li><%= link_to comm.comm_name, "/communities/#{comm.id}" %>    
+      		<%= link_to "Make changes", edit_community_path(comm.id) %></li>
+    <% end %>
+  </ul>
+
+
+<h1>My Events</h1>
+
+

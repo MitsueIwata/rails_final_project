@@ -15,7 +15,7 @@
 
     <% user = User.find_by(id: comm.organizer) %>
       <tr>
-        <td><%= comm.comm_name %></td>
+        <td><%= link_to comm.comm_name, "/communities/#{comm.id}"%></td>
         <td><%= user.username %></td>
         <td><%= comm.comm_category %></td>
         <td><%= comm.location %></td>

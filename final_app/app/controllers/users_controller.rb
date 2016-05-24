@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 		user.password = params[:user][:password]
 		user.save
 		redirect_to root_url
+		#redirct_to profile_url
 	end
 
 	def destroy

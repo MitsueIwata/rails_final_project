@@ -18,10 +18,10 @@ bart = User.create( :username => 'Bart Simpson', :email => 'bart@example.org', :
 lisa = User.create( :username => 'Lisa Simpson', :email => 'lisa@example.org', :image_url => 'lisa.jpg', :password => 'stacy', :password_confirmation => 'stacy' )
 monty = User.create( :username => 'Monty Burns', :email => 'monty@example.org', :image_url => 'monty.jpg', :password => 'excellent', :password_confirmation => 'excellent' )
 
-moes = Community.create(:comm_name => "Happy Hour", :organizer => homer.id, :comm_category=> 'beer', :location =>'moes tavern')
-quikEMart = Community.create(:comm_name => "Free Slushies", :organizer => bart.id, :comm_category => 'slushies', :location => 'Springfield')
-school = Community.create(:comm_name => "Model UN", :organizer => lisa.id, :comm_category => 'study group', :location => 'classroom')
-nuclearPlant = Community.create(:comm_name => "Hail to the Thief", :organizer => monty.id, :comm_category => 'work', :location => 'Power Plant')
+moes = Community.create(:comm_name => "Happy Hour", :organizer => homer.id, :comm_category=> 'beer', :location =>'moes tavern', :description => '$1 Duff from 5pm to dawn')
+quikEMart = Community.create(:comm_name => "Free Slushies", :organizer => bart.id, :comm_category => 'slushies', :location => 'Springfield', :description => 'Every Wednesday with purchases over $20')
+school = Community.create(:comm_name => "Model UN", :organizer => lisa.id, :comm_category => 'study group', :location => 'classroom', :description => 'Future Leaders of America Unite!')
+nuclearPlant = Community.create(:comm_name => "Hail to the Thief", :organizer => monty.id, :comm_category => 'work', :location => 'Power Plant', :description => 'Eeeexcellent')
 
 
 
