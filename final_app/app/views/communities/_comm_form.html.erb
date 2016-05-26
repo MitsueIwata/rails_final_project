@@ -1,0 +1,26 @@
+<%= @comm.errors.full_messages %>
+
+<%= form_for @comm do |form| %>
+
+  <p><%= form.label :comm_name %>
+  <br>
+  <%= form.text_field :comm_name, size: 80, autofocus: true, required: true %></p>
+
+  <p><%= form.label :organizer, "Organizer" %>
+  <br>
+  <%= form.collection_select :organizer, User.all.order('username'), :id, :username %></p>
+  
+  <p><%= form.label :comm_category %>
+  <br>
+  <%= form.text_field :comm_category %></p>
+
+  <%= form.label :location,  "Location" %>
+  <br>
+  <%= form.text_field :location, size: 80 %>
+
+  <p><%= form.label :description %>
+  <br>
+  <%= form.text_area :description, rows: 4, cols: 80 %></p>
+
+  <%= form.submit %>
+<% end %>

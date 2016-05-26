@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "calendars", force: :cascade do |t|
-    t.date    "date"
-    t.integer "event_id"
-    t.integer "community_id"
-  end
-
-  add_index "calendars", ["community_id"], name: "index_calendars_on_community_id"
-  add_index "calendars", ["event_id"], name: "index_calendars_on_event_id"
-
   create_table "comments", force: :cascade do |t|
     t.date    "date"
     t.integer "user_id"
@@ -42,21 +33,19 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.text    "title"
-    t.text    "location"
-    t.text    "image_url"
-    t.date    "date_start"
-    t.date    "date_end"
-    t.time    "time_start"
-    t.time    "time_end"
-    t.text    "description"
-    t.integer "creator_id"
-    t.integer "community_id"
-    t.text    "event_category"
+    t.text     "title"
+    t.text     "location"
+    t.text     "image_url"
+    t.text     "description"
+    t.integer  "community_id"
+    t.text     "event_category"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "user_id"
   end
 
   add_index "events", ["community_id"], name: "index_events_on_community_id"
-  add_index "events", ["creator_id"], name: "index_events_on_creator_id"
+  add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.text "username"

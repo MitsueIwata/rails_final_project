@@ -4,6 +4,13 @@ class UsersController < ApplicationController
     	if !@user || (@user.id != session[:user_id].to_i)
       		redirect_to root_url
       	end
+
+
+      	@events = Event.where(user_id: @user.id)
+		respond_to do |format| 
+	      format.html
+	      format.json { render :json => @events } 
+	    end
 	end
 	
 	def index

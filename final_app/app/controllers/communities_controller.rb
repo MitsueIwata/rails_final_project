@@ -18,11 +18,11 @@ class CommunitiesController < ApplicationController
 
 	def update
 		comm = Community.find_by(id: params[:id])
-		comm.comm_name = params[:comm_name]
-		comm.organizer = params[:organizer]
-		comm.comm_category = params[:comm_category]
-		comm.location = params[:location]
-		comm.description = params[:description]
+		comm.comm_name = params['community'][:comm_name]
+		comm.organizer = params['community'][:organizer]
+		comm.comm_category = params['community'][:comm_category]
+		comm.location = params['community'][:location]
+		comm.description = params['community'][:description]
 		comm.save
 		redirect_to root_url#communities_url(@comm)
 	end

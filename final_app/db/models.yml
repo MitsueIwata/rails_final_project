@@ -16,19 +16,12 @@ Event
   title: text
   location: text
   image_url: text
-  date_start: date
-  date_end: date
-  time_start: time
-  time_end: time
+  start_time: datetime
+  end_time: datetime
   description: text
-  creator_id: integer
+  user_id: integer
   community_id: integer
   event_category: text
-
-Calendar
-  date: date
-  event_id: integer
-  community_id: integer
 
 Comment
   date: date
