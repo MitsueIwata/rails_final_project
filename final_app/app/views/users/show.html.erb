@@ -41,6 +41,7 @@ $(document).ready(function() {
 <% end %>
 
 <h1>My Communities</h1>
+<%= link_to 'add a community', new_community_path %>
   <ul>
     <% comms = Community.where(organizer: @user.id) %>
     <% comms.each do |comm| %>

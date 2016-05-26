@@ -1,16 +1,21 @@
 <%= @comm.errors.full_messages %>
 
+<%= params %>
+
 <%= form_for @comm do |form| %>
 
-  <p><%= form.label :comm_name %>
+  <p><%= form.label :comm_name, "Community Name" %>
   <br>
   <%= form.text_field :comm_name, size: 80, autofocus: true, required: true %></p>
 
-  <p><%= form.label :organizer, "Organizer" %>
+  <p><%= form.label :image_url %>
   <br>
-  <%= form.collection_select :organizer, User.all.order('username'), :id, :username %></p>
-  
-  <p><%= form.label :comm_category %>
+  <%= form.text_field :image_url %></p>
+
+
+  <%= form.hidden_field :organizer, value: session[:user_id].to_i %>
+
+  <p><%= form.label :comm_category, "Category" %>
   <br>
   <%= form.text_field :comm_category %></p>
 
@@ -24,3 +29,4 @@
 
   <%= form.submit %>
 <% end %>
+

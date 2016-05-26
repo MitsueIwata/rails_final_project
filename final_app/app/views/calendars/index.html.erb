@@ -73,8 +73,15 @@ $(document).ready(function()
 					      alert('there was an error while fetching events!');
 					  },
 					  backgroundColor: 'yellow',
-					  textColor: 'black'
+					  textColor: 'black',
+					eventClick: function(event) {
+				        if (event.url) {
+				            window.open(event.url);
+				            return false;
+				        }
+				    }
 				}
+
 			});			
 		});
 

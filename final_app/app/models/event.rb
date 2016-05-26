@@ -10,6 +10,7 @@ class Event < ActiveRecord::Base
       :start => self.start_time,
       :end => self.end_time,
       :description => self.description,
+      :url => Rails.application.routes.url_helpers.event_path(id)
      }
      end
 

@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 	      format.html
 	      format.json { render :json => @events } 
 	    end
+	    return
 	end
 	
 	def index

@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.text    "comm_name"
     t.integer "organizer"
     t.text    "description"
+    t.text    "image_url"
   end
 
   create_table "events", force: :cascade do |t|
@@ -42,6 +43,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer  "user_id"
+    t.boolean  "allDay",         default: false
+    t.text     "url"
   end
 
   add_index "events", ["community_id"], name: "index_events_on_community_id"

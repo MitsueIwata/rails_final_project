@@ -7,6 +7,7 @@ User
 
 Community
   comm_name: text
+  image_url: text
   organizer: integer
   comm_category: text
   location: text
@@ -22,6 +23,8 @@ Event
   user_id: integer
   community_id: integer
   event_category: text
+  allDay: boolean(false)
+  url: text
 
 Comment
   date: date
