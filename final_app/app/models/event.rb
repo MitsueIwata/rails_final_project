@@ -1,4 +1,9 @@
 class Event < ActiveRecord::Base
+  
+  belongs_to :community
+
+  has_many :comments
+
   def as_json(options = {})
     {
       :id => self.id,
@@ -10,7 +15,8 @@ class Event < ActiveRecord::Base
       :start => self.start_time,
       :end => self.end_time,
       :description => self.description,
-      :url => Rails.application.routes.url_helpers.event_path(id)
+      :url => Rails.application.routes.url_helpers.event_path(id),
+      :color => self.color
      }
      end
 

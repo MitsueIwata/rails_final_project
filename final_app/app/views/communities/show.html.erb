@@ -1,8 +1,58 @@
-<h1>My Communities</h1>
+<script>
+$(document).ready(function() {
 
-<p>Name: <%= @comm.comm_name %></p>
+    // page is now ready, initialize the calendar...
+
+    var id = <%= @comm.id %>
+
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+		header:
+		{
+			left: 'prev,next today',
+			center: 'title',
+			right: 'month,agendaWeek,agendaDay'
+		},
+
+		/*
+			selectable:true will enable user to select datetime slot
+			selectHelper will add helpers for selectable.
+		*/
+		selectable: true,
+		selectHelper: true,
+		events: {
+			url: '/communities/'+id+'.json',
+			type: 'GET',
+			backgroundColor: 'yellow',
+			textColor: 'black'
+		}
+    })
+
+});
+</script>
+
+
+<h1><%= @comm.comm_name %></h1>
+
+<%= image_tag(@comm.image_url) %>
 
 <p>Category: <%= @comm.comm_category %></p>
 <p>Location: <%= @comm.location %></p>
 <p>Description: <%= @comm.description %></p>
 
+<% if @comm.organizer == session[:user_id].to_i%>
+	<p><%= link_to "edit community", edit_community_path(@comm.id)%></p>
+<% end %>
+
+
+<p><strong>Events</strong><p>
+<%= render 'event_details', comm:@comm%>
+<% if @comm.organizer == session[:user_id].to_i%>
+	<p><%= link_to "add an event", new_event_path%></p>
+<% end %>
+
+
+
+<h1>Events Calendar</h1>
+
+<div id='calendar'></div>

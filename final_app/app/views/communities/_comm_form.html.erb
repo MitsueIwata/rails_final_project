@@ -1,6 +1,36 @@
-<%= @comm.errors.full_messages %>
+<script type="text/javascript">
+  var MY_COLORS = {
+        green:       '#7bd148',
+        bold_blue:   '#5484ed',
+        blue:        '#a4bdfc',
+        turquoise:   '#46d6db',
+        light_green: '#7ae7bf',
+        bold_green:  '#51b749',
+        yellow:      '#fbd75b',
+        orange:      '#ffb878',
+        red:         '#ff887c',
+        bold_red:    '#dc2127',
+        purple:      '#dbadff',
+        gray:        '#e1e1e1'
+        };
+    my_default_color = MY_COLORS[:green]
 
-<%= params %>
+</script>
+
+<script>
+$(function(){
+
+    
+    $('#color').simplecolorpicker();
+
+    
+
+});
+</script>
+          
+
+
+<%= @comm.errors.full_messages %>
 
 <%= form_for @comm do |form| %>
 
@@ -12,6 +42,9 @@
   <br>
   <%= form.text_field :image_url %></p>
 
+  <p><%= form.label :color_id, "Pick a color" %>
+  <br>
+  <%= form.collection_select :color_id, Color.all.order('name'), :hex, :name %></p>
 
   <%= form.hidden_field :organizer, value: session[:user_id].to_i %>
 

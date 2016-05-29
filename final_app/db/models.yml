@@ -12,6 +12,7 @@ Community
   comm_category: text
   location: text
   description: text
+  color_id: text
 
 Event
   title: text
@@ -25,9 +26,17 @@ Event
   event_category: text
   allDay: boolean(false)
   url: text
+  color: text
+  community_id
 
 Comment
-  date: date
+  # date: date
   user_id: integer
   event_id: integer
-  community_id: integer
+  content: text
+  event_id
+  user_id
+
+Color
+  name: text
+  hex: text

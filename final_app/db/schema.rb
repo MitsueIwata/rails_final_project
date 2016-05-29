@@ -13,14 +13,17 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "comments", force: :cascade do |t|
-    t.date    "date"
-    t.integer "user_id"
-    t.integer "event_id"
-    t.integer "community_id"
+  create_table "colors", force: :cascade do |t|
+    t.text "name"
+    t.text "hex"
   end
 
-  add_index "comments", ["community_id"], name: "index_comments_on_community_id"
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+    t.text    "content"
+  end
+
   add_index "comments", ["event_id"], name: "index_comments_on_event_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
@@ -31,7 +34,10 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "organizer"
     t.text    "description"
     t.text    "image_url"
+    t.text    "color_id"
   end
+
+  add_index "communities", ["color_id"], name: "index_communities_on_color_id"
 
   create_table "events", force: :cascade do |t|
     t.text     "title"
@@ -45,6 +51,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer  "user_id"
     t.boolean  "allDay",         default: false
     t.text     "url"
+    t.text     "color"
   end
 
   add_index "events", ["community_id"], name: "index_events_on_community_id"

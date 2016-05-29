@@ -33,22 +33,16 @@ $(document).ready(function() {
 </script>
 <h1>My Account</h1>
 
+<%= image_tag(@user.image_url) %>
+
+
 <p>Name: <%= @user.username %></p>
 <p>Email: <%= @user.email %></p>
 
-<% @events.each do |event| %>
-	<%= event.title %>
-<% end %>
-
 <h1>My Communities</h1>
-<%= link_to 'add a community', new_community_path %>
-  <ul>
-    <% comms = Community.where(organizer: @user.id) %>
-    <% comms.each do |comm| %>
-      <li><%= link_to comm.comm_name, "/communities/#{comm.id}" %>    
-      		<%= link_to "Make changes", edit_community_path(comm.id) %></li>
-    <% end %>
-  </ul>
+<p><%= link_to 'add a community', new_community_path %></p>
+
+<%= render 'comm_detail' %>
 
 <h1>My Calendar</h1>
 
