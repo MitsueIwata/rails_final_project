@@ -5,13 +5,11 @@ class UsersController < ApplicationController
       		redirect_to root_url
       	end
 
-
       	@events = Event.where(user_id: @user.id)
 		respond_to do |format| 
 	      format.html
 	      format.json { render :json => @events } 
 	    end
-	    return
 	end
 	
 	def index

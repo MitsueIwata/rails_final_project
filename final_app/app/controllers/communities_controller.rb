@@ -63,6 +63,8 @@ class CommunitiesController < ApplicationController
         @community = @community.where("comm_name LIKE ? OR comm_category LIKE ?",
                                              "%#{params[:keyword]}%", params[:keyword])
     	end
+    	@community = @community.limit(100)
+
 		respond_to do |format|
 	      format.html do
 	        render 'index'

@@ -5,6 +5,8 @@ class EventsController < ApplicationController
         @events = @events.where("title LIKE ? OR description LIKE ?",
                                              "%#{params[:keyword]}%", "%#{params[:keyword]}%")
     	end
+    	@events = @events.limit(100)
+
 		respond_to do |format|
 	      format.html do
 	        render 'index'
