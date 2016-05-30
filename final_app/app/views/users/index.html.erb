@@ -3,16 +3,27 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Username</th>
       <th>Email</th>
+      <th>Communities</th>
+
       <th></th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= image_tag(user.image_url) %>
+</td>
         <td><%= user.username %></td>
         <td><%= user.email %></td>
+        <td>
+          <% comms = Community.where(organizer:user.id)%>
+          <% comms.each do |comm|%>
+            <li><%= link_to comm.comm_name, community_path(comm.id) %></li>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
