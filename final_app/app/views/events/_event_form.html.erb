@@ -1,0 +1,43 @@
+
+<%= form_for @event do |form| %>
+
+  <p><%= form.label :title, "Event title" %>
+  <br>
+  <%= form.text_field :title, size: 80, autofocus: true, required: true %></p>
+
+  <%= form.label :location,  "Location" %>
+  <br>
+  <%= form.text_field :location, size: 80 %>
+
+  <p><%= form.label :image_url %>
+  <br>
+  <%= form.text_field :image_url %></p>
+
+  <p><%= form.label :start_time %>
+  <br>
+  <%= form.datetime_select :start_time, :ampm => true, :minute_step => 15 %></p>
+
+  <p><%= form.label :end_time %>
+  <br>
+  <%= form.datetime_select :end_time, :ampm => true, :minute_step => 15 %></p>
+
+  <p><%= form.label :allDay, "This is an all day event:" %>
+  <%= form.check_box :allDay %></p>
+
+
+  <%= form.hidden_field :user_id, value: session[:user_id].to_i %>
+  <p><%= form.label :community_id, "Community" %>
+  <br>
+  <%= form.collection_select :community_id, Community.where(organizer:session[:user_id]), :id, :comm_name %></p>
+
+  <p><%= form.label :event_category, "Category" %>
+  <br>
+  <%= form.text_field :event_category %></p>
+
+  <p><%= form.label :description %>
+  <br>
+  <%= form.text_area :description, rows: 4, cols: 80 %></p>
+
+  <%= form.submit %>
+<% end %>
+

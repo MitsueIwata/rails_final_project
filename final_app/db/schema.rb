@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "event_id"
-    t.text    "content"
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.text     "content"
+    t.datetime "date"
   end
 
   add_index "comments", ["event_id"], name: "index_comments_on_event_id"

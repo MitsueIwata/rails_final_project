@@ -1,0 +1,23 @@
+<div class="details">
+
+
+  <ul>
+    <% comms = Community.where(organizer: @user.id) %>
+    <% comms.each do |comm| %>
+
+      <p>Community name: <strong><%= link_to comm.comm_name, "/communities/#{comm.id}" %></strong></p>  
+      <p><%= image_tag comm.image_url %></p>
+      <p>Category: <%= comm.comm_category %></p>
+      <p>Location: <%= comm.location %></p>
+      <p>Description: <%= comm.description %></p>
+
+      <p><%= link_to "Make changes", edit_community_path(comm.id) %></p>
+      <p><strong>Events</strong></p>
+      <p><%= link_to "add an event", new_event_path%></p>
+
+      <%= render 'event_details', comm: comm %>
+  
+    <% end %>
+  </ul>
+
+</div>

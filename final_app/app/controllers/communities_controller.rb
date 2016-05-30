@@ -59,5 +59,20 @@ class CommunitiesController < ApplicationController
 
 	def index
 		@community = Community.all
+		if params[:keyword].present?
+        @community = @community.where("comm_name LIKE ? OR comm_category LIKE ?",
+                                             "%#{params[:keyword]}%", params[:keyword])
+    	end
+		respond_to do |format|
+	      format.html do
+	        render 'index'
+	      end
+	      format.json do
+	        render json: @movies
+	      end
+	      format.xml do
+	        render xml: @movies
+	      end
+		end
 	end
 end

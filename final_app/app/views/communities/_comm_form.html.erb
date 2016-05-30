@@ -1,36 +1,3 @@
-<script type="text/javascript">
-  var MY_COLORS = {
-        green:       '#7bd148',
-        bold_blue:   '#5484ed',
-        blue:        '#a4bdfc',
-        turquoise:   '#46d6db',
-        light_green: '#7ae7bf',
-        bold_green:  '#51b749',
-        yellow:      '#fbd75b',
-        orange:      '#ffb878',
-        red:         '#ff887c',
-        bold_red:    '#dc2127',
-        purple:      '#dbadff',
-        gray:        '#e1e1e1'
-        };
-    my_default_color = MY_COLORS[:green]
-
-</script>
-
-<script>
-$(function(){
-
-    
-    $('#color').simplecolorpicker();
-
-    
-
-});
-</script>
-          
-
-
-<%= @comm.errors.full_messages %>
 
 <%= form_for @comm do |form| %>
 
@@ -41,6 +8,8 @@ $(function(){
   <p><%= form.label :image_url %>
   <br>
   <%= form.text_field :image_url %></p>
+
+  
 
   <p><%= form.label :color_id, "Pick a color" %>
   <br>

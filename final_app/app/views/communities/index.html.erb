@@ -1,7 +1,9 @@
 <h1>Communities</h1>
 
-
-
+<p>Seach communities by title or category:</p>
+<%= form_tag communities_path, :method => :get do %>
+  <%= text_field_tag :keyword, '', placeholder: 'Search by title...' %>
+<% end %>
 
 
 <table>

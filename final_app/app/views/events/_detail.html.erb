@@ -1,0 +1,16 @@
+
+<%= image_tag(@event.image_url) %>
+
+
+<% uid = @event.community.organizer %>
+<% un = User.find_by(id:uid) %>
+<p>Organizer: <%= un.username %></p>
+<%= image_tag(un.image_url) %>
+<p>Community name: <%= @event.community.comm_name %></p>
+<p>Start: <%= @event.start_time.to_formatted_s(:long) %></p>
+<p>End: <%= @event.end_time.to_formatted_s(:long) %></p>
+
+<p>Location: <%= @event.location %></p>
+<p>Category: <%= @event.event_category %></p>
+
+<p>Event description: <%= @event.description %></p>

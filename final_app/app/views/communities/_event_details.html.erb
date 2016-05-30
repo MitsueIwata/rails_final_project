@@ -1,0 +1,4 @@
+<% events = Event.where(community_id:comm.id) %>
+	<% events.each do |event| %>
+		<li><%= link_to event.title, event_path(event.id)%></li>
+      <% end %>

@@ -30,7 +30,7 @@ Event
   community_id
 
 Comment
-  # date: date
+  date: datetime
   user_id: integer
   event_id: integer
   content: text
