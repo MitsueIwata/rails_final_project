@@ -6,7 +6,7 @@
 <% un = User.find_by(id:uid) %>
 <p>Organizer: <%= un.username %></p>
 <%= image_tag(un.image_url) %>
-<p>Community name: <%= @event.community.comm_name %></p>
+<p>Community name: <%= link_to @event.community.comm_name, community_path(@event.community.id) %></p>
 <p>Start: <%= @event.start_time.to_formatted_s(:long) %></p>
 <p>End: <%= @event.end_time.to_formatted_s(:long) %></p>
 
